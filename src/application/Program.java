@@ -25,10 +25,11 @@ public class Program {
 		System.out.println(seller);
 		System.out.println();
 		
+		System.out.println("===TEST one: seller findById");
 		Seller sellerFind = sellerDao.findById(3);
 		System.out.println(sellerFind);
 
-
+		
 		
 		
 

@@ -12,6 +12,7 @@ public class Program {
 
 	public static void main(String[] args) {
 
+		
 		Locale.setDefault(Locale.US);
 
 		Department object = new Department(1, "Computers");
@@ -22,6 +23,14 @@ public class Program {
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		Seller seller = new Seller(15, "Rafael", "rafael@gmail.com", new Date(), 4500.00, object);
 		System.out.println(seller);
+		System.out.println();
+		
+		Seller sellerFind = sellerDao.findById(3);
+		System.out.println(sellerFind);
+
+
+		
+		
 
 	}
 

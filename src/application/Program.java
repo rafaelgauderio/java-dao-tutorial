@@ -44,6 +44,10 @@ public class Program {
 			System.out.println(nickname);
 		}
 		
+		System.out.println("\n===TEST four: seller INSERT ====");
+		Seller newSeller = new Seller(null,"Zilda Safadex", "zilda@gmail",new Date(), 4500.0, department);
+		sellerDao.insert(newSeller);
+		System.out.println("Inserted! New Id = "+ newSeller.getId()+ ", Name of new Seller: "+ newSeller.getName());
 		
 
 		

@@ -11,7 +11,8 @@ import java.util.Properties;
 
 public class DB {
 	
-	
+
+	private static final String driver = "com.mysql.jdbc.Driver";
 
 	private static Connection conn = null;
 	
@@ -21,9 +22,11 @@ public class DB {
 		if (conn == null) {
 			try {
 				
+				//Class.forName(driver);
 				Properties props = loadProperties();
 				String url = props.getProperty("dburl");
 				//Class.forName("com.mysql.jdbc.Driver");
+				
 				
 				conn = DriverManager.getConnection(url, props);
 				

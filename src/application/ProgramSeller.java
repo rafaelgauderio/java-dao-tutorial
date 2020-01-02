@@ -10,7 +10,7 @@ import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
-public class Program {
+public class ProgramSeller {
 
 	public static void main(String[] args) {
 		
@@ -48,7 +48,7 @@ public class Program {
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New Id = " + newSeller.getId() + ", Name of new Seller: " + newSeller.getName());
 
-		System.out.println("\n===TEST five: selle UPDATE===");
+		System.out.println("\n===TEST five: seller UPDATE===");
 		Seller sellerupd = sellerDao.findById(41);
 		sellerupd.setName("Karla Kingston");
 		sellerupd.setEmail("karla@gmail.com");
@@ -57,7 +57,7 @@ public class Program {
 		Seller sellerFind2 = sellerDao.findById(41);
 		System.out.println(sellerFind2);
 		
-		System.out.println("\n===TEST six: selle DeletebyId===");
+		System.out.println("\n===TEST six: seller DeletebyId===");
 		System.out.println("Inform a id to delete data");
 		int idDel = sc.nextInt();
 		sellerDao.deleteById(idDel);

@@ -27,11 +27,11 @@ public class ProgramSeller {
 		System.out.println();
 
 		System.out.println("===TEST one: seller findById===");
-		Seller sellerFind = sellerDao.findById(3);
+		Seller sellerFind = sellerDao.findById(2);
 		System.out.println(sellerFind);
 
 		System.out.println("\n===TEST two: seller findByDepartment===");
-		Department department = new Department(4, null);
+		Department department = new Department(3, null);
 		List<Seller> list = sellerDao.findByDepartment(department);
 		for (Seller nickname : list) {
 			System.out.println(nickname);
@@ -49,16 +49,16 @@ public class ProgramSeller {
 		System.out.println("Inserted! New Id = " + newSeller.getId() + ", Name of new Seller: " + newSeller.getName());
 
 		System.out.println("\n===TEST five: seller UPDATE===");
-		Seller sellerupd = sellerDao.findById(41);
+		Seller sellerupd = sellerDao.findById(9);
 		sellerupd.setName("Karla Kingston");
 		sellerupd.setEmail("karla@gmail.com");
 		sellerDao.update(sellerupd);
 		System.out.println("Update complete");
-		Seller sellerFind2 = sellerDao.findById(41);
+		Seller sellerFind2 = sellerDao.findById(9);
 		System.out.println(sellerFind2);
 		
 		System.out.println("\n===TEST six: seller DeletebyId===");
-		System.out.println("Inform a id to delete data");
+		System.out.println("Inform an id to delete data");
 		int idDel = sc.nextInt();
 		sellerDao.deleteById(idDel);
 		System.out.println("Delete complete");		

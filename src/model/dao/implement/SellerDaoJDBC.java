@@ -131,7 +131,8 @@ public class SellerDaoJDBC implements SellerDao {
 
 		try {
 			st = conn.prepareStatement("SELECT seller.*, department.Name as DepartmentName " + "FROM seller "
-					+ "INNER JOIN seller.DepartmentId= department.Id " + "WHERE seller.Id = ?");
+					+ "INNER JOIN department "
+					+ "ON seller.DepartmentId= department.Id " + "WHERE seller.Id = ?");
 
 			st.setInt(1, id);
 			rs = st.executeQuery();
@@ -177,8 +178,9 @@ public class SellerDaoJDBC implements SellerDao {
 		ResultSet rs = null;
 
 		try {
-			st = conn.prepareStatement("SELECT seller.*, department.Name as DepName " + "FROM seller "
-					+ "INNER JOIN seller.DepartmentId = department.Id" + "ORDER BY Name");
+			st = conn.prepareStatement("SELECT seller.*, department.Name as DepartmentName " + "FROM seller "
+					+ "INNER JOIN department "
+					+ "ON seller.DepartmentId = department.Id " + "ORDER BY Name");
 
 			rs = st.executeQuery();
 			List<Seller> list = new ArrayList<Seller>();
@@ -214,8 +216,9 @@ public class SellerDaoJDBC implements SellerDao {
 		ResultSet rs = null;
 
 		try {
-			st = conn.prepareStatement("SELECT seller.*, department.Name as DepName " + "FROM seller "
-					+ "INNER JOIN seller.DepartmentId = department.Id" + "WHERE DepartmentId =?" + "ORDER BY Name");
+			st = conn.prepareStatement("SELECT seller.*, department.Name as DepartmentName " + "FROM seller "
+					+ "INNER JOIN department "
+					+ "ON seller.DepartmentId = department.Id " + "WHERE DepartmentId =? " + "ORDER BY Name");
 
 			st.setInt(1, department.getId());
 
